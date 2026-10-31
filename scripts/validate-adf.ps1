@@ -20,6 +20,8 @@ foreach ($f in $folders) {
         try {
             $j = Get-Content $_.FullName -Raw | ConvertFrom-Json
             if ($j.name -ne $_.BaseName) { Fail "$f/$($_.Name): name '$($j.name)' differs from file name" }
+            $wantType = @{ linkedService='linkedservices'; dataset='datasets'; dataflow='dataflows'; pipeline='pipelines' }[$f]
+            if ($j.type -ne "Microsoft.DataFactory/factories/$wantType") { Fail "$f/$($_.Name): top-level type must be Microsoft.DataFactory/factories/$wantType" }
             $objs["$f/$($j.name)"] = $j
         } catch { Fail "$f/$($_.Name): invalid JSON - $($_.Exception.Message)" }
     }

@@ -1,5 +1,6 @@
 {
     "name": "LS_ADLS_NYC_PAYROLL",
+    "type": "Microsoft.DataFactory/factories/linkedservices",
     "properties": {
         "annotations": [],
         "type": "AzureBlobFS",

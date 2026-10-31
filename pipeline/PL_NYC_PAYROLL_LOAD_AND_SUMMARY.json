@@ -1,5 +1,6 @@
 {
     "name": "PL_NYC_PAYROLL_LOAD_AND_SUMMARY",
+    "type": "Microsoft.DataFactory/factories/pipelines",
     "properties": {
         "activities": [
             {

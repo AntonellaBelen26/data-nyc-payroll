@@ -1,5 +1,6 @@
 {
     "name": "DF_LOAD_PAYROLL_2021",
+    "type": "Microsoft.DataFactory/factories/dataflows",
     "properties": {
         "type": "MappingDataFlow",
         "typeProperties": {

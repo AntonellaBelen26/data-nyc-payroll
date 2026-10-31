@@ -1,5 +1,6 @@
 {
     "name": "DS_ADLS_PAYROLL_2021",
+    "type": "Microsoft.DataFactory/factories/datasets",
     "properties": {
         "linkedServiceName": { "referenceName": "LS_ADLS_NYC_PAYROLL", "type": "LinkedServiceReference" },
         "annotations": [],

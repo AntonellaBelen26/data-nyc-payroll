@@ -1,5 +1,6 @@
 {
     "name": "DF_PAYROLL_SUMMARY",
+    "type": "Microsoft.DataFactory/factories/dataflows",
     "properties": {
         "type": "MappingDataFlow",
         "typeProperties": {

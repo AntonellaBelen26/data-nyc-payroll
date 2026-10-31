@@ -1,5 +1,6 @@
 {
     "name": "DF_LOAD_EMP_MASTER",
+    "type": "Microsoft.DataFactory/factories/dataflows",
     "properties": {
         "type": "MappingDataFlow",
         "typeProperties": {
