@@ -1,0 +1,43 @@
+{
+    "name": "DF_LOAD_TITLE_MASTER",
+    "properties": {
+        "type": "MappingDataFlow",
+        "typeProperties": {
+            "sources": [
+                { "dataset": { "referenceName": "DS_ADLS_TITLE_MASTER", "type": "DatasetReference" }, "name": "srcTitleMaster" }
+            ],
+            "sinks": [
+                { "dataset": { "referenceName": "DS_SQL_TITLE_MASTER", "type": "DatasetReference" }, "name": "sinkTitleMaster" }
+            ],
+            "transformations": [],
+            "scriptLines": [
+                "source(output(",
+                "          TitleCode as string,",
+                "          TitleDescription as string",
+                "     ),",
+                "     allowSchemaDrift: false,",
+                "     validateSchema: false,",
+                "     ignoreNoFilesFound: false) ~> srcTitleMaster",
+                "srcTitleMaster sink(allowSchemaDrift: false,",
+                "     validateSchema: false,",
+                "     input(",
+                "          TitleCode as string,",
+                "          TitleDescription as string",
+                "     ),",
+                "     deletable:false,",
+                "     insertable:true,",
+                "     updateable:false,",
+                "     upsertable:false,",
+                "     truncate:true,",
+                "     format:'table',",
+                "     skipDuplicateMapInputs: true,",
+                "     skipDuplicateMapOutputs: true,",
+                "     errorHandlingOption: 'stopOnFirstError',",
+                "     mapColumn(",
+                "          TitleCode,",
+                "          TitleDescription",
+                "     )) ~> sinkTitleMaster"
+            ]
+        }
+    }
+}

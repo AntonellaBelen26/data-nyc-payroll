@@ -1,0 +1,4 @@
+{
+    "_comment": "REFERENCE ONLY (not an ADF-native file). Create in ADF Studio: Manage > Author > Global parameters > New. Name: global_param_fiscalyear, Type: Int, Value: 2020. ADF stores it in the factory/<FACTORY_NAME>.json file after Save/Publish. Allowed values: 2020 or 2021.",
+    "global_param_fiscalyear": { "type": "int", "value": 2020 }
+}

@@ -1,0 +1,10 @@
+{
+    "name": "LS_AZURE_SQL_NYC_PAYROLL",
+    "properties": {
+        "annotations": [],
+        "type": "AzureSqlDatabase",
+        "typeProperties": {
+            "connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=sqlnycpayrollantonella.database.windows.net;Initial Catalog=db_nycpayroll;User ID=<SQL_ADMIN_LOGIN>"
+        }
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "name": "DF_LOAD_AGENCY_MASTER",
+    "properties": {
+        "type": "MappingDataFlow",
+        "typeProperties": {
+            "sources": [
+                { "dataset": { "referenceName": "DS_ADLS_AGENCY_MASTER", "type": "DatasetReference" }, "name": "srcAgencyMaster" }
+            ],
+            "sinks": [
+                { "dataset": { "referenceName": "DS_SQL_AGENCY_MASTER", "type": "DatasetReference" }, "name": "sinkAgencyMaster" }
+            ],
+            "transformations": [],
+            "scriptLines": [
+                "source(output(",
+                "          AgencyID as string,",
+                "          AgencyName as string",
+                "     ),",
+                "     allowSchemaDrift: false,",
+                "     validateSchema: false,",
+                "     ignoreNoFilesFound: false) ~> srcAgencyMaster",
+                "srcAgencyMaster sink(allowSchemaDrift: false,",
+                "     validateSchema: false,",
+                "     input(",
+                "          AgencyID as string,",
+                "          AgencyName as string",
+                "     ),",
+                "     deletable:false,",
+                "     insertable:true,",
+                "     updateable:false,",
+                "     upsertable:false,",
+                "     truncate:true,",
+                "     format:'table',",
+                "     skipDuplicateMapInputs: true,",
+                "     skipDuplicateMapOutputs: true,",
+                "     errorHandlingOption: 'stopOnFirstError',",
+                "     mapColumn(",
+                "          AgencyID,",
+                "          AgencyName",
+                "     )) ~> sinkAgencyMaster"
+            ]
+        }
+    }
+}

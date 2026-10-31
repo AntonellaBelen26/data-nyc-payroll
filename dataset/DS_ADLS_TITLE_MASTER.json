@@ -1,0 +1,19 @@
+{
+    "name": "DS_ADLS_TITLE_MASTER",
+    "properties": {
+        "linkedServiceName": { "referenceName": "LS_ADLS_NYC_PAYROLL", "type": "LinkedServiceReference" },
+        "annotations": [],
+        "type": "DelimitedText",
+        "typeProperties": {
+            "location": { "type": "AzureBlobFSLocation", "fileName": "TitleMaster.csv", "folderPath": "dirpayrollfiles", "fileSystem": "nycpayroll" },
+            "columnDelimiter": ",",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": "\""
+        },
+        "schema": [
+            { "name": "TitleCode", "type": "String" },
+            { "name": "TitleDescription", "type": "String" }
+        ]
+    }
+}
