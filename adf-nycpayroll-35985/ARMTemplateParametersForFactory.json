@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-nycpayroll-35985"
+		},
+		"LS_ADLS_NYC_PAYROLL_accountKey": {
+			"value": ""
+		},
+		"LS_AZURE_SQL_NYC_PAYROLL_password": {
+			"value": ""
+		},
+		"LS_ADLS_NYC_PAYROLL_properties_typeProperties_url": {
+			"value": "https://stnycpayroll72665.dfs.core.windows.net/"
+		},
+		"LS_AZURE_SQL_NYC_PAYROLL_properties_typeProperties_server": {
+			"value": "sql-nycpayroll-88164.database.windows.net"
+		},
+		"LS_AZURE_SQL_NYC_PAYROLL_properties_typeProperties_database": {
+			"value": "db_nycpayroll"
+		},
+		"LS_AZURE_SQL_NYC_PAYROLL_properties_typeProperties_userName": {
+			"value": "sqladminuser"
+		}
+	}
+}
