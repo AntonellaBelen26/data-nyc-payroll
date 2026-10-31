@@ -1,0 +1,12 @@
+{
+	"name": "adf-nycpayroll-antonella",
+	"properties": {
+		"globalParameters": {
+			"global_param_fiscalyear": {
+				"type": "int",
+				"value": 2020
+			}
+		}
+	},
+	"location": "eastus"
+}
